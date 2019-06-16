@@ -16,8 +16,13 @@ public class Solucion {
         // TODO code application logic here
         Grafo grafo = new Grafo();
         grafo.cargarGrafo("ejemplo.txt");
-        System.out.println(grafo.toString());
-        
+        grafo.feromonasIniciales();
+        //System.out.println(grafo.toString());
+        Vertice v1 = grafo.obtenerVertice("caracas");
+        Vertice v2 = grafo.obtenerVertice("colombia");
+        grafo.recorridoGrafo(v1);
+        grafo.recorridoGrafo(v1);
+        grafo.recorridoGrafo(v2);
         
         /*Arista arista;
         grafo.agregarVertice("caracas");

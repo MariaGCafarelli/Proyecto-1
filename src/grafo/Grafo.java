@@ -141,7 +141,7 @@ public class Grafo implements GrafoInterface{
         for(Vertice v: noVisitados){
             //auxiliar = obtenerArista(inicial,v);
             arregloProbabilidades[contador] = probabilidad(inicial,v);
-            
+            System.out.println(arregloProbabilidades[contador]);
             arregloAristas[contador] = obtenerArista(inicial,v);
             contador++;
         }
@@ -182,8 +182,9 @@ public class Grafo implements GrafoInterface{
         Double resultado2 = 0.0, probabilidad = null, fero = null, acumulado1 = null;
         Double resultado1,  cuadrado, multi, acumulado, fero2;
         Arista auxiliar, auxiliar2;
-        
-        if (estaLado(verticeSalida.getId(),verticeLLegada.getId())){
+        System.out.println("ESTA" + verticeSalida.getId() + verticeLLegada.getId());
+        if (estaLado(verticeSalida.getId(),verticeLLegada.getId()) || estaLado(verticeLLegada.getId(),verticeSalida.getId())){
+            System.out.println("ESTA");
             auxiliar2 = obtenerArista(verticeSalida,verticeLLegada);
             acumulado = auxiliar2.getPeso();
             fero2 = auxiliar2.getFeromonas();
@@ -332,7 +333,7 @@ public class Grafo implements GrafoInterface{
     public boolean estaLado(String u, String v){
         for (Arista a: listaArista){
          
-            if (a.getExtremo1().getId().equals(u) && a.getExtremo2().getId().equals(v) || a.getExtremo2().getId().equals(v) && a.getExtremo1().getId().equals(u)  ) {
+            if (a.getExtremo1().getId().equals(u) && a.getExtremo2().getId().equals(v) || a.getExtremo2().getId().equals(v) && a.getExtremo1().getId().equals(u)) {
                 return true;
             }
         }   
