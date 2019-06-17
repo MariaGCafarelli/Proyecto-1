@@ -5,13 +5,13 @@ colombia
 peru
 chile
 lima
-carretera1 caracas colombia 300.0
-carretera2 caracas peru 100.0
-carretera3 caracas lima 500.0
-carretera4 caracas chile 30.0
-carretera5 colombia peru 700.0
-carretera6 colombia lima 200.0
-carretera7 colombia chile 50.0
-carretera8 peru lima 550.0
-carretera9 peru chile 950.0
-carretera10 chile lima 540.0
+carretera1 caracas colombia 300.0 5
+carretera2 caracas peru 100.0 6
+carretera3 caracas lima 500.0 5
+carretera4 caracas chile 30.0 5
+carretera5 colombia peru 700.0 5
+carretera6 colombia lima 200.0 5
+carretera7 colombia chile 50.0 5
+carretera8 peru lima 550.0 5
+carretera9 peru chile 950.0 5
+carretera10 chile lima 540.0 5

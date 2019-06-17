@@ -7,6 +7,7 @@ package grafo;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 
@@ -561,23 +562,15 @@ public class Grafo implements GrafoInterface{
             this.numeroVertice = Integer.parseInt(s);
             s = in.readLine();
             this.numeroLado = Integer.parseInt(s);
+            
             while ((s = in.readLine()) != null ){
                 estaVerticee = 0;
                 if (contador <= this.numeroVertice){
                     separar = s.split(" ");
-                    for (int i=0; i <listaVertices.size();i++){
-                        v = listaVertices.get(i);
-                        if (v.getId().equals(separar[0].toLowerCase())){
-                            estaVerticee = 3;
-                            System.out.println(" Error al agregar el Vertice: " + separar[0] + " " + separar[1]);
-                            break;
-                        }   
-                    }
-                    if ((estaVerticee != 3) || (listaVertices.isEmpty())){ //VERTICES CON UNA SOLA PALABRA DE NOMBRE
+                //VERTICES CON UNA SOLA PALABRA DE NOMBRE
                         v = new Vertice(separar[0].toLowerCase());
                         listaVertices.add(v);
                         listaVerticesAdyacentes.add(new ArrayList<Vertice>());
-                    }
                 }
 
                 if (contador > numeroVertice){
@@ -586,15 +579,7 @@ public class Grafo implements GrafoInterface{
                     Vertice vI = null;
                     Vertice vF = null;
                     boolean estaAristaa = false;
-                    for (int i = 0; i<listaArista.size(); i++){
-                        a = listaArista.get(i);
-                        if (a.getId().equals(separar[0].toLowerCase())){
-                            estaAristaa = true;
-                            System.out.println(" Error al agregar el Arista: " + separar[0] + " " + separar[1]  + " " + separar[2]  + " " + separar[3]);
-                            break;
-                        }
-                    }
-                    if ((estaAristaa == false) || listaArista.isEmpty() ){
+                    
                         for (int i=0; i<listaVertices.size(); i++){
                             v = listaVertices.get(i);
                             if (v.getId().equals(separar[1].toLowerCase())){
@@ -611,8 +596,8 @@ public class Grafo implements GrafoInterface{
                         }
                         if (estaVerticee == 2){
                             Arista arista = new Arista(separar[0].toLowerCase(),Double.parseDouble(separar[3]),vI,vF); //ARISTAS CON UNA SOLA PALABRA DE NOMBRE
-                            //System.out.println(separar[4]);
-                            //arista.setFeromonasIniciales(Double.parseDouble(separar[4]));
+                            System.out.println(separar[4]);
+                            arista.setFeromonasIniciales(Double.parseDouble(separar[4]));
                             listaArista.add(arista);
                             if (!(listaVerticesAdyacentes.get(posicion1).contains(vF)))
                                 listaVerticesAdyacentes.get(posicion1).add(vF);
@@ -623,7 +608,7 @@ public class Grafo implements GrafoInterface{
                         else if (estaVerticee != 2) {
                             System.out.println(" Error al agregar el Arista: " + separar[0] + " " + separar[1]  + " " + separar[2]  + " " + separar[3]);
                         }
-                    }
+                    
                 }
             contador = contador + 1;
             }
@@ -632,6 +617,33 @@ public class Grafo implements GrafoInterface{
         }
         catch (Exception e){
             System.out.println("No se pudo cargar el grafo con exito.");
+            e.printStackTrace();
+            return false;
+        } //TERMINADO
+    }
+    
+    public boolean retornarGrafo(String Archivo)throws IOException{
+        
+        try{
+            String fileName = Archivo + ".txt";
+            PrintWriter out = new PrintWriter(fileName);
+            out.print(Integer.toString(this.numeroVertice));
+            out.println();
+            out.print(Integer.toString(this.numeroLado));
+            for(Vertice v: this.listaVertices){
+                out.println();
+                out.print(v.getId());    
+            }           
+            for(Arista a: this.listaArista){
+                out.println();
+                out.print( a.getId() + " " + a.getExtremo1() + " " + a.getExtremo2() + " " + a.getPeso() + " " + a.getFeromonas());    
+            }
+            
+            out.close();
+            return true;       
+        }
+        catch (Exception e){
+            System.out.println("No se pudo cargar el grafo en un .txt con exito.");
             e.printStackTrace();
             return false;
         } //TERMINADO
