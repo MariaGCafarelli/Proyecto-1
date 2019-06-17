@@ -15,10 +15,12 @@ import java.awt.Toolkit;
 public class AgregarAristas extends javax.swing.JFrame {
 
     private Grafo g;
+    private int numeroCaminos;
+    private int contador;
     
-    public AgregarAristas(Grafo g) {
+    public AgregarAristas(Grafo g, int numeroCaminos, int contador) {
         initComponents();
-        this.setTitle("Caminos");       
+        this.setTitle("Agregar Caminos");       
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
         Dimension tamano=mipantalla.getScreenSize();
@@ -26,6 +28,8 @@ public class AgregarAristas extends javax.swing.JFrame {
         int anchoP = tamano.width;
         setLocation(anchoP/3,alturaP/4);
         this.g=g;
+        this.contador = contador;
+        this.numeroCaminos = numeroCaminos;
     }
 
     /**
