@@ -12,7 +12,7 @@ import java.util.*;
 
 
 
-public class Grafo implements GrafoInterface{
+public class Grafo {
 
     //ArryList que guardan los vertices y las aristas.
     private ArrayList <Vertice> listaVertices = new ArrayList<Vertice>();
@@ -24,9 +24,62 @@ public class Grafo implements GrafoInterface{
     //Objetos vertices y arista.
     private Vertice v = null;
     private Arista a = null;
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+    *Constructor del grafo
+    */
+    
     public Grafo() {
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+    *Devuelve el numero de vertices del grafo.
+    *@throws int.
+    */
+    
+    public int getNumeroVertices(){
+        return this.numeroVertice;
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+    *Devuelve el numero de lados del grafo.
+    *@throws int.
+    */
+    
+    public int getNumeroLados(){
+        return this.numeroLado;
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+    *Asiga el numero de vertices del grafo.
+    *@param int numero de vertices del grafo.
+    *@throws void.
+    */
+    
+    public void setNumeroVertices(int vertices){
+        this.numeroVertice = vertices; 
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+    *Asiga el numero de lados del grafo.
+    *@param int numero de lados del grafo.
+    *@throws void.
+    */
+    
+    public void setNumeroLados(int lados){
+        this.numeroLado = lados;
+    }
+    
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
@@ -126,9 +179,10 @@ public class Grafo implements GrafoInterface{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Toma . .
-    *@param .
-    *@throws .
+    *Toma un vertice y una lista de vertices, establece comparaciones entre sus probabilidades y decide
+    * cual es la mejor opcion a tomar entre las aristas que unen al vertice y sus adyacentes.
+    *@param Vertice inicial, ArrayList<Vertice> noVisitados.
+    *@throws Arista.
     */ 
     
     public Arista mejorCamino(Vertice inicial, ArrayList<Vertice> noVisitados){ //llama a un array que contiene los vertices no visitados
@@ -172,10 +226,9 @@ public class Grafo implements GrafoInterface{
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Toma un nodo y realiza el recorrido del grafo, pasa por todos los nodos y regresa al inicio. 
-    *Llama funciones de las clases Vertice, Lado y Arista.
-    *@param Vertice donde inicia el recorrido.
-    *@throws boolean.
+    *Establece l valor de la probabilidad entre un vertice y otro a traves de una formula preestablecida. 
+    *@param Vertice verticeSalida, Vertice verticeLLegada.
+    *@throws Double.
     */
     
     public Double probabilidad(Vertice verticeSalida, Vertice verticeLLegada){
@@ -211,32 +264,6 @@ public class Grafo implements GrafoInterface{
         return probabilidad;                 
     }
     
- 
- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    /**
-    *Devuelve el valor que tiene el numero de vertices en el grafo.
-    *@param vacio.
-    *@throws int numero de vertices.
-    */
-
-    public int numeroDeVertices() {
-        return this.numeroVertice;
-    }
-
- 
- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-       /**
-    *Devuelve el numero de lados que tiene el grafo.
-    *@param vacio.
-    *@throws int numero de aristas.
-    */
-
-    public int numeroDeLados() {
-        return this.numeroLado;
-    }
-
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
@@ -270,9 +297,8 @@ public class Grafo implements GrafoInterface{
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Verifica estaVertice(id) y crea el vertice.
-    *@param id del vertice a agregar.
-    *@param peso del vertice a agregar.
+    *Verifica si un vertice no pertenece ya al grafo y lo crea.
+    *@param String id.
     *@throws boolean.
     */
 
@@ -289,9 +315,9 @@ public class Grafo implements GrafoInterface{
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Si el vertice esta en el grafo, te devuelve su valor.
-    *@param id del vertice.
-    *@throws Vertice v.
+    *Si el vertice esta en el grafo, te devuelve su valor a partir de su nombre.
+    *@param String id.
+    *@throws Vertice.
     */
 
     public Vertice obtenerVertice(String id) throws NoSuchElementException{
@@ -325,9 +351,8 @@ public class Grafo implements GrafoInterface{
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Verifica que el lado existe en el grafo.
-    *@param id del vertice inicial a agregar.
-    *@param id del vertice final a agregar.
+    *Verifica que el lado existe en el grafo a partir del nombre de los vertices que conecta.
+    *@param String u, String v.
     *@throws boobean.
     */
 
@@ -344,9 +369,9 @@ public class Grafo implements GrafoInterface{
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Si el vertice esta en el grafo, lo elimina de listaVertices, lo saca de donde sea adyacente en listaVerticesAdyacentes y si tiene
-    *aristas en listaAristas las quita.
-    *@param id del vertice.
+    *Si el vertice esta en el grafo, lo elimina de listaVertices, lo saca de donde sea adyacente en listaVerticesAdyacentes
+    * y elimina las aristas a las que pertenece.
+    *@param String id del vertice.
     *@throws boolean.
     */
 
@@ -376,7 +401,6 @@ public class Grafo implements GrafoInterface{
 
     /**
     *Devuelve la lista de vertices.
-    *@param vacia.
     *@throws ArrayList de vertices existentes.
     */
 
@@ -388,8 +412,6 @@ public class Grafo implements GrafoInterface{
 
     /**
     *Devuelve la lista de aristas.
-    *@param vacio.
-     * @return  Lista <lado> 
     *@throws ArrayList de las aristas existentes.
     */
 
@@ -405,7 +427,7 @@ public class Grafo implements GrafoInterface{
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Agrega la Arista a en el grafo.
+    *Agrega una arista en el grafo si no existe previamente.
     *@param Arista a.
     *@throws boolean.
     */
@@ -439,7 +461,7 @@ public class Grafo implements GrafoInterface{
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-    *Verifica que el Arista es agregable y lo crea.
+    *Verifica que la arista es agregable y la crea.
     *@param id del vertice.
     *@param double peso del vertice.
     *@param String del id del vertice u.
@@ -463,7 +485,7 @@ public class Grafo implements GrafoInterface{
     
     /**
     *Si la arista existe en el grafo, la quita de la lista de aristas.
-    *@param id de la arista a eliminar.
+    *@param String id de la arista a eliminar.
     *@throws boolean.
     */
 
@@ -506,9 +528,9 @@ public class Grafo implements GrafoInterface{
 
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //Si la arista esta en el grafo, retorna su valor.
-    //@param id del vertice.
-    //@throws Arista a.
+    //Si la arista esta en el grafo, retorna su valor a partir de los vertices en sus extremos.
+    //@param Vertice u, Vertice v.
+    //@throws Arista.
 
     public Arista obtenerArista(Vertice u, Vertice v) throws NoSuchElementException {
         for (Arista a: listaArista){
@@ -621,6 +643,14 @@ public class Grafo implements GrafoInterface{
             return false;
         } //TERMINADO
     }
+
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+    
+    /**
+    *A partir del grafo existente, crea un archivo de tipo .txt con el contenido de el. 
+    *@param String del nombre del archivo.
+    *@throws boolean.
+    */
     
     public boolean retornarGrafo(String Archivo)throws IOException{
         
