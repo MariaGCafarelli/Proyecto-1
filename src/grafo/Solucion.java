@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class Solucion {
     public static void main(String[] args) throws IOException {
-        // TODO code application logic here
+        /*// TODO code application logic here
         Grafo grafo = new Grafo();
         grafo.cargarGrafo("segundo.txt");
         //grafo.feromonasIniciales();
@@ -24,7 +24,10 @@ public class Solucion {
         //grafo.recorridoGrafo(v1);
         //grafo.recorridoGrafo(v2);
         
-        //grafo.retornarGrafo("segundo");
+        //grafo.retornarGrafo("segundo");*/
+        
+        Hormiguero window = new Hormiguero();        
+        window.setVisible(true);
     }
     
 }
