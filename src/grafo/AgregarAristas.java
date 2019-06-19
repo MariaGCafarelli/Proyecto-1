@@ -18,7 +18,7 @@ public class AgregarAristas extends javax.swing.JFrame {
     private int numeroCaminos;
     private int contador;
     
-    public AgregarAristas(Grafo g, int numeroCaminos, int contador) {
+    public AgregarAristas(Grafo g, int numeroCaminos, int contador) { //mejoras
         initComponents();
         this.setTitle("Agregar Caminos");       
         setDefaultCloseOperation(EXIT_ON_CLOSE);
