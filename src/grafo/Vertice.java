@@ -19,14 +19,29 @@ package grafo;
 public class Vertice
 {
   private String id;
+  private int color;
 
   
   public Vertice(String id) {
-    this.id = id;    
+    this.id = id;
+    this.color = 0;
   }   
+  
+  public Vertice(int color){
+      this.id = " ";
+      this.color = color;
+  }
 
   public String getId() {
     return this.id;
+  }
+  
+  public int getColor(){
+      return this.color;
+  }
+  
+  public void setColor(int color){
+      this.color = color;
   }
 
   public String toString() { 

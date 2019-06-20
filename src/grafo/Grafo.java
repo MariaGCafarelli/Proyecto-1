@@ -134,7 +134,7 @@ public class Grafo {
         recorrido.add(actual);
         feromonasRecorrido(recorrido);
         
-        System.out.println(recorrido);
+        //System.out.println(recorrido);
         
         return recorrido;
     }

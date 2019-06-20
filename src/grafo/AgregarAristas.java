@@ -189,6 +189,7 @@ public class AgregarAristas extends javax.swing.JFrame {
             int hormigas = Integer.parseInt(name);
             g.toString();
             new Recorrido(g,hormigas,0).setVisible(true);
+            this.setVisible(false);
             this.dispose();
         }
         

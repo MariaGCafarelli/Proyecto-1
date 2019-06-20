@@ -92,27 +92,45 @@ public class Recorrido extends javax.swing.JFrame {
         //MOSTRAR EL FRAME CON EL RECORRIDO
         ArrayList<Vertice> noVisitados = new ArrayList<Vertice>();
         ArrayList<Arista> visitada = new ArrayList<Arista>();
-        int[][] maze = new int[hormiguero.getNumeroLados()][hormiguero.getNumeroLados()];
+        Vertice[][] maze = new Vertice[hormiguero.getNumeroVertices()][hormiguero.getNumeroVertices()*2];
+        
+        for(int row = 0; row < maze.length; row++) {
+            for(int col = 0; col < maze[0].length; col++) {
+                maze[row][col] = new Vertice(0);
+                System.out.print("1");
+            }
+            System.out.println();
+        }
+        
+        int pos = hormiguero.getNumeroVertices()/2;
+        
+        for(int i = 0; i<hormiguero.getNumeroVertices();i++){
+            maze[pos][i].setColor(1);
+        }
         
         for(Vertice v: hormiguero.getVertices()){
             Vertice aux = v;
             noVisitados.add(aux);
         }
         
-        System.out.println(hormiguero.toString());
+        //System.out.println(this.contador);
         
-        if(contador<hormiguero.getNumeroVertices()){
+        if(this.contador<hormiguero.getNumeroVertices()){
             Random ram = new Random();
             int random = ram.nextInt((hormiguero.getNumeroVertices()-1)+1);
             Vertice temp = noVisitados.get(random);
             hormiguero.feromonasIniciales();
             visitada = hormiguero.recorridoGrafo(temp);
-            System.out.println(visitada);
-            contador++;
+            hormiguero.feromonasRecorrido(visitada);
+            //System.out.println(visitada);
+            this.contador++;
             //FRAMEEEEEEEE
+            Labyrinth recorriendo = new Labyrinth(maze);
+            recorriendo.setVisible(true);
+            //this.dispose();
+        }if(this.contador == hormiguero.getNumeroVertices()){
             this.dispose();
-        }//if 
-        this.dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
