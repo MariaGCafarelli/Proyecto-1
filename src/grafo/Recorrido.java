@@ -7,6 +7,8 @@ package grafo;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -16,6 +18,8 @@ public class Recorrido extends javax.swing.JFrame {
     Grafo hormiguero;
     int hormigas;
     int contador;
+    ArrayList <ArrayList<Arista>> aristasRecorridas = new ArrayList<ArrayList<Arista>>();;
+            
     /**
      * Creates new form Recorrido
      */
@@ -86,6 +90,29 @@ public class Recorrido extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //MOSTRAR EL FRAME CON EL RECORRIDO
+        ArrayList<Vertice> noVisitados = new ArrayList<Vertice>();
+        ArrayList<Arista> visitada = new ArrayList<Arista>();
+        int[][] maze = new int[hormiguero.getNumeroLados()][hormiguero.getNumeroLados()];
+        
+        for(Vertice v: hormiguero.getVertices()){
+            Vertice aux = v;
+            noVisitados.add(aux);
+        }
+        
+        System.out.println(hormiguero.toString());
+        
+        if(contador<hormiguero.getNumeroVertices()){
+            Random ram = new Random();
+            int random = ram.nextInt((hormiguero.getNumeroVertices()-1)+1);
+            Vertice temp = noVisitados.get(random);
+            hormiguero.feromonasIniciales();
+            visitada = hormiguero.recorridoGrafo(temp);
+            System.out.println(visitada);
+            contador++;
+            //FRAMEEEEEEEE
+            this.dispose();
+        }//if 
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

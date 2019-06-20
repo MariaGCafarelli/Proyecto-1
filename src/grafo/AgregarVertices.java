@@ -119,7 +119,7 @@ public class AgregarVertices extends javax.swing.JFrame {
             System.out.println("entra");
             
             String stringCiudades = jTextField1.getText();
-            Vertice v = new Vertice(stringCiudades);
+            Vertice v = new Vertice(stringCiudades.toLowerCase());
             g.agregarVertice(v);
             this.contador = this.contador + 1;
             System.out.println(this.contador + " " + numeroCiudades);

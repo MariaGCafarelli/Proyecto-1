@@ -177,7 +177,9 @@ public class AgregarAristas extends javax.swing.JFrame {
             String stringCiudad2 = jTextField3.getText();
             String pesoString = jTextField4.getText();
             Double peso = Double.parseDouble(pesoString);
-            g.agregarArista(stringNombre,peso, stringCiudad1, stringCiudad2);
+            g.agregarArista(stringNombre.toLowerCase(),peso, stringCiudad1.toLowerCase(), stringCiudad2.toLowerCase());
+
+            
             this.contador = this.contador + 1;
             System.out.println(this.contador + " " + numeroCaminos);
             new AgregarAristas(g,this.numeroCaminos, this.contador).setVisible(true);
@@ -185,6 +187,7 @@ public class AgregarAristas extends javax.swing.JFrame {
         }if(this.numeroCaminos == contador){
             String name = JOptionPane.showInputDialog("Introduzca el numero de hormigas que tendrá la iteración: ");
             int hormigas = Integer.parseInt(name);
+            g.toString();
             new Recorrido(g,hormigas,0).setVisible(true);
             this.dispose();
         }
