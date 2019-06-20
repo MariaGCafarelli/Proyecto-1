@@ -12,22 +12,25 @@ import java.awt.Toolkit;
  *
  * @author Mari
  */
-public class NuevaSimulacion extends javax.swing.JFrame {
-    Grafo hormiguero = new Grafo();
+public class Recorrido extends javax.swing.JFrame {
+    Grafo hormiguero;
+    int hormigas;
+    int contador;
     /**
-     * Creates new form NuevaSimulacion
+     * Creates new form Recorrido
      */
-    public NuevaSimulacion() {
+    public Recorrido(Grafo g, int hormigas, int contador) {
         initComponents();
-        this.setTitle("Ciudades");
+        this.setTitle("Comienza el recorrido");       
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
         Dimension tamano=mipantalla.getScreenSize();
         int alturaP = tamano.height;
         int anchoP = tamano.width;
         setLocation(anchoP/3,alturaP/4);
-        this.setResizable(false);
-        
+        this.hormiguero = g;
+        this.hormigas = hormigas;
+        this.contador = contador;
     }
 
     /**
@@ -39,48 +42,42 @@ public class NuevaSimulacion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-
-        jTextField2.setText("jTextField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Siguiente");
+        jButton1.setText("Recorrido");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Numero de ciudades en la simulacion:");
-
-        jTextField1.setText("jTextField1");
+        jLabel1.setText("Haga clic para mostrar un nuevo recorrido de la iteración");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addGap(43, 43, 43)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(21, 21, 21))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(155, 155, 155)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -88,20 +85,15 @@ public class NuevaSimulacion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String stringCiudades = jTextField1.getText();
-        int numeroCiudades = Integer.parseInt(stringCiudades);
-        //hormiguero.setNumeroVertices(numeroCiudades);
-        //int numeroCaminos = (((numeroCiudades-1)*numeroCiudades)/2);
-        //hormiguero.setNumeroLados(numeroCaminos);
-        new AgregarVertices(hormiguero,numeroCiudades,0).setVisible(true);
-        this.dispose();
-        
+        //MOSTRAR EL FRAME CON EL RECORRIDO
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

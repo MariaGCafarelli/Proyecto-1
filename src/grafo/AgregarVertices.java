@@ -16,6 +16,7 @@ public class AgregarVertices extends javax.swing.JFrame {
     private Grafo g;
     private int numeroCiudades;
     private int contador;
+    
 
     public AgregarVertices(Grafo g, int numeroCiudades, int contador) {
         initComponents();
@@ -30,6 +31,7 @@ public class AgregarVertices extends javax.swing.JFrame {
         this.g=g;
         this.numeroCiudades = numeroCiudades;
         this.contador=contador;
+        
     }
 
     /**
@@ -115,6 +117,7 @@ public class AgregarVertices extends javax.swing.JFrame {
         
         if(this.contador<numeroCiudades){
             System.out.println("entra");
+            
             String stringCiudades = jTextField1.getText();
             Vertice v = new Vertice(stringCiudades);
             g.agregarVertice(v);
@@ -126,6 +129,7 @@ public class AgregarVertices extends javax.swing.JFrame {
         } 
         if (this.contador == this.numeroCiudades){
             int numeroCaminos = (((this.numeroCiudades - 1)* this.numeroCiudades)/2);
+            System.out.println("aqui" + numeroCaminos);
             new AgregarAristas(g,numeroCaminos, 0).setVisible(true);
             this.dispose();
         }
