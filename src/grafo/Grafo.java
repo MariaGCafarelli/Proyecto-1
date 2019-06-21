@@ -629,7 +629,7 @@ public class Grafo {
                         }
                         if (estaVerticee == 2){
                             Arista arista = new Arista(separar[0].toLowerCase(),Double.parseDouble(separar[3]),vI,vF); //ARISTAS CON UNA SOLA PALABRA DE NOMBRE
-                            System.out.println(separar[4]);
+                            //System.out.println(separar[4]);
                             arista.setFeromonasIniciales(Double.parseDouble(separar[4]));
                             listaArista.add(arista);
                             if (!(listaVerticesAdyacentes.get(posicion1).contains(vF)))

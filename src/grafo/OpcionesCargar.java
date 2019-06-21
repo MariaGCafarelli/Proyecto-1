@@ -7,6 +7,7 @@ package grafo;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,6 +45,11 @@ public class OpcionesCargar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Agregar ciudades");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Comenzar iteración");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -78,8 +84,19 @@ public class OpcionesCargar extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        
+        String numero = JOptionPane.showInputDialog("Introduzca el número de hormigas que tendrá la iteración: ");
+        int hormigas = Integer.parseInt(numero);
+        new Recorrido(this.hormiguero,hormigas,0).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String nombre = JOptionPane.showInputDialog("Introduzca el número de ciudades que desea agregará al hormiguero: ");
+        int ciudades = Integer.parseInt(nombre);
+        new AgregarVerticesC(this.hormiguero,ciudades,0);//FALTA TERMINAR AGREGAR A UN GRAFO CARGADO
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

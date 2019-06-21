@@ -121,8 +121,8 @@ public class Recorrido extends javax.swing.JFrame {
         
         if(this.contador<this.hormigas){
             Random ram = new Random();
-            int random = ram.nextInt((hormiguero.getNumeroVertices()-1)+1);
-            Vertice temp = noVisitados.get(random);
+            int numero = (int) (Math.random() * hormiguero.getNumeroVertices());
+            Vertice temp = noVisitados.get(numero);
             Vertice inicial = temp;
             hormiguero.feromonasIniciales();
             visitada = hormiguero.recorridoGrafo(temp);
@@ -146,6 +146,7 @@ public class Recorrido extends javax.swing.JFrame {
             //this.dispose();
         }if(this.contador == this.hormigas){
             hormiguero.feromonasEvaporadas();
+            JOptionPane.showMessageDialog(null, "Se actualizaron las feromonas por evaporación");
             //INFORMACION DEL MEJOR CAMINO FINAL
             new Opciones(this.hormiguero).setVisible(true);
             this.dispose();

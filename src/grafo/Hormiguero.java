@@ -23,7 +23,7 @@ public class Hormiguero extends javax.swing.JFrame {
      */
     public Hormiguero(Grafo g) {
         initComponents(); 
-        this.setTitle("Sistema Hormiga");
+        this.setTitle("Menú principal");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
         Dimension tamano=mipantalla.getScreenSize();
