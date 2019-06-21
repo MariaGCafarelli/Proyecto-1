@@ -16,7 +16,9 @@ public class Recorrido extends javax.swing.JFrame {
     Grafo hormiguero;
     int hormigas;
     int contador;
-    ArrayList <ArrayList<Arista>> aristasRecorridas = new ArrayList<ArrayList<Arista>>();;
+    //ArrayList <ArrayList<Arista>> aristasRecorridas = new ArrayList<ArrayList<Arista>>();
+    ArrayList <Double> recorridos = new ArrayList<Double>();
+    ArrayList <ArrayList<Arista>> listaDeRecorridos = new ArrayList<ArrayList<Arista>>();
             
 
     public Recorrido(Grafo g, int hormigas, int contador) {
@@ -84,30 +86,10 @@ public class Recorrido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //MOSTRAR EL FRAME CON EL RECORRIDO
+
         ArrayList<Vertice> noVisitados = new ArrayList<Vertice>();
         ArrayList<Arista> visitada = new ArrayList<Arista>();
-        ArrayList <ArrayList<Arista>> listaDeRecorridos = new ArrayList<ArrayList<Arista>>();
-        //Vertice[][] maze = new Vertice[21][20];
-        Double[] recorridos = new Double[this.hormigas];
         
-        /*for(int row = 0; row < maze.length; row++) {
-            for(int col = 0; col < maze[0].length; col++) {
-                maze[row][col] = new Vertice(0);
-                //System.out.print("1");
-            }
-            System.out.println();
-        }
-        
-        int pos = 9;
-        int contador = 0;
-        for(int i = 0; i<hormiguero.getNumeroVertices();i++){
-            maze[pos][contador+1].setColor(1);
-            maze[pos][contador+2].setColor(3);
-            contador = contador + 2;
-        }*/
-        //maze[pos][contador].setColor(0);
         for(Vertice v: hormiguero.getVertices()){
             Vertice aux = v;
             noVisitados.add(aux);
@@ -129,9 +111,9 @@ public class Recorrido extends javax.swing.JFrame {
                 recor = recor + a.getExtremo1().getId() + " - " + a.getExtremo2() + "\n" + " ";
                 distancia = distancia + a.getPeso();
             }
-            recorridos[this.contador] = distancia;
-            //hormiguero.feromonasRecorrido(visitada);
-            //System.out.println(visitada);
+            System.out.println(distancia + " " + contador);
+            //this.recorridos[this.contador] = distancia;
+            recorridos.add(distancia);
             this.contador++;
             //FRAMEEEEEEEE
             //noVisitados.add(temp);
@@ -140,20 +122,22 @@ public class Recorrido extends javax.swing.JFrame {
             //System.out.println(visitada);
             //caja de informacion del recorrdio
             JOptionPane.showMessageDialog(null,"Este es el recorrido numero: " + this.contador + "\n"+ "En este recorrido una de las " + this.hormigas + " hormigas partió de: " + inicial.getId() + "\n" + "Su recorrido fue por los caminos: "+ "\n" + recor + "\n" + " Su distancia recorrida fue de: " + total );
-            //Labyrinth recorriendo = new Labyrinth(maze);
-            //recorriendo.setVisible(true);
+
             //this.dispose();
         }if(this.contador == this.hormigas){
             int posicion = 0;
-            
+            int i =0;
             Double mejorRecorrido = 20000.0;
-            for(int i =0;i<this.hormigas;i++){
-                Double aux = recorridos[i];
+            for(Double p: recorridos){
+                
+                System.out.println(recorridos.get(i));
+                Double aux = recorridos.get(i);
                 int equals = Double.compare(aux,mejorRecorrido);
                 if (equals<0){
-                    mejorRecorrido = recorridos[i];
+                    mejorRecorrido = recorridos.get(i);
                     posicion = i;
                 }
+                i++;
             }
             
             ArrayList<Arista> mejor = new ArrayList<Arista>();
