@@ -137,7 +137,7 @@ public class Grafo {
         
         return recorrido;
     }
-    
+
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
@@ -195,7 +195,7 @@ public class Grafo {
     *@throws Arista.
     */ 
     
-    public Arista mejorCamino(Vertice inicial, ArrayList<Vertice> noVisitados){ //llama a un array que contiene los vertices no visitados
+    public Arista mejorCamino(Vertice inicial, ArrayList<Vertice> noVisitados){ //llama a un arraylist que contiene los vertices no visitados en ese recorrido
         Arista auxiliar;
         int contador = 0;
         Double mayorProbabilidad = 0.0;

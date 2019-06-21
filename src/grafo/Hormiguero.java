@@ -139,7 +139,9 @@ public class Hormiguero extends javax.swing.JFrame {
             g.cargarGrafo(nombre);
             new OpcionesCargar(g).setVisible(true);
             this.dispose();
+            
         } catch (IOException ex) {
+            new Hormiguero(g).setVisible(true);
             Logger.getLogger(Hormiguero.class.getName()).log(Level.SEVERE, null, ex);
         }
         

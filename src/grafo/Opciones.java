@@ -116,6 +116,8 @@ public class Opciones extends javax.swing.JFrame {
         //nombre = nombre +".txt";
         try {
             g.retornarGrafo(nombre);
+            new Hormiguero(this.g).setVisible(true);
+            this.setVisible(false);
         } catch (IOException ex) {
             Logger.getLogger(Opciones.class.getName()).log(Level.SEVERE, null, ex);
         }

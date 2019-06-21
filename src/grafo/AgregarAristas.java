@@ -51,6 +51,7 @@ public class AgregarAristas extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,13 +70,13 @@ public class AgregarAristas extends javax.swing.JFrame {
 
         jLabel4.setText("Nombre del camino:");
 
-        jLabel5.setText("(asigne nombres de una sola palabra. Ejemplo: PrimerCamino)");
+        jLabel5.setText("(Asigne nombres de una sola palabra. Ejemplo: PrimerCamino)");
 
         jTextField1.setText("jTextField1");
 
-        jLabel6.setText("(asigne el nombre del primero extremo que conecta el camino,  use una sola palabra. Ejemplo: Caracas)");
+        jLabel6.setText("(Asigne el nombre del primer extremo que conecta el camino,  use una sola palabra. Ejemplo: Caracas)");
 
-        jLabel7.setText("(asigne el nombre delsegundo extremo que conecta el camino,  use una sola palabra. Ejemplo: Colombia)");
+        jLabel7.setText("(Asigne el nombre del segundo extremo que conecta el camino,  use una sola palabra. Ejemplo: Colombia)");
 
         jTextField2.setText("jTextField2");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -89,6 +90,8 @@ public class AgregarAristas extends javax.swing.JFrame {
         jTextField4.setText("jTextField4");
 
         jLabel8.setText("Asigne las caracteristicas de la arista a agregar en la simulacion:");
+
+        jLabel9.setText("(Asigne valores numericos, enteros o decimales. Ejemplo: 3,6)");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,9 +128,11 @@ public class AgregarAristas extends javax.swing.JFrame {
                                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel7)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(426, 426, 426)
+                        .addGap(49, 49, 49)
+                        .addComponent(jLabel9)
+                        .addGap(342, 342, 342)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +162,9 @@ public class AgregarAristas extends javax.swing.JFrame {
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -166,7 +173,7 @@ public class AgregarAristas extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        System.out.println("numero de caminos" + this.numeroCaminos);
+        //System.out.println("numero de caminos" + this.numeroCaminos);
         if(this.numeroCaminos > contador){
             String stringNombre = jTextField1.getText();
             String stringCiudad1 = jTextField2.getText();
@@ -177,7 +184,7 @@ public class AgregarAristas extends javax.swing.JFrame {
 
             
             this.contador = this.contador + 1;
-            System.out.println(this.contador + " " + numeroCaminos);
+            //System.out.println(this.contador + " " + numeroCaminos);
             new AgregarAristas(g,this.numeroCaminos, this.contador).setVisible(true);
             this.dispose();
         }if(this.numeroCaminos == contador){
@@ -207,6 +214,7 @@ public class AgregarAristas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
