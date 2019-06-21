@@ -58,6 +58,11 @@ public class OpcionesCargar extends javax.swing.JFrame {
         });
 
         jButton3.setText("Eliminar ciudades");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Se comenzará la iteración con un nuevo grupo de hormigas");
 
@@ -127,6 +132,17 @@ public class OpcionesCargar extends javax.swing.JFrame {
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        String nombre = JOptionPane.showInputDialog("Introduzca el nombre de la ciudad que desea eliminar: ");
+        nombre.toLowerCase();
+        hormiguero.eliminarVertice(nombre);
+        JOptionPane.showMessageDialog(null, "Ya se eliminó la ciudad " + nombre + " y todas los caminos que la contengan.");
+        new OpcionesCargar(this.hormiguero).setVisible(true);
+        this.setVisible(false);
+        this.dispose();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
