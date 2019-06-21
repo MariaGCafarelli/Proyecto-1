@@ -126,8 +126,8 @@ public class Grafo {
             }            
             auxiliar = noVisitados.indexOf(verticeActual);
             noVisitados.remove(auxiliar);
-            System.out.println(verticeActual);
-            System.out.println("ITERACION: " + i + " NUMERO DE VERTICES: " + noVisitados.size());            
+            //System.out.println(verticeActual);
+            //System.out.println("ITERACION: " + i + " NUMERO DE VERTICES: " + noVisitados.size());            
         }
         
         actual = obtenerArista(verticeActual,verticeInicial);
@@ -207,7 +207,7 @@ public class Grafo {
         for(Vertice v: noVisitados){
             //auxiliar = obtenerArista(inicial,v);
             arregloProbabilidades[contador] = probabilidad(inicial,v);
-            System.out.println(arregloProbabilidades[contador]);
+            //System.out.println(arregloProbabilidades[contador]);
             arregloAristas[contador] = obtenerArista(inicial,v);
             contador++;
         }
@@ -215,7 +215,7 @@ public class Grafo {
         
         for( i=0; i < noVisitados.size(); i++){
             Double aux = arregloProbabilidades[i];
-            System.out.println(aux);
+            //System.out.println(aux);
             int equals = Double.compare(aux,mayorProbabilidad);
             if(equals > 0){
                 mayorProbabilidad = arregloProbabilidades[i];
@@ -247,9 +247,9 @@ public class Grafo {
         Double resultado2 = 0.0, probabilidad = null, fero = null, acumulado1 = null;
         Double resultado1,  cuadrado, multi, acumulado, fero2;
         Arista auxiliar, auxiliar2;
-        System.out.println("ESTA" + verticeSalida.getId() + verticeLLegada.getId());
+        //System.out.println("ESTA" + verticeSalida.getId() + verticeLLegada.getId());
         if (estaLado(verticeSalida.getId(),verticeLLegada.getId()) || estaLado(verticeLLegada.getId(),verticeSalida.getId())){
-            System.out.println("ESTA");
+            //System.out.println("ESTA");
             auxiliar2 = obtenerArista(verticeSalida,verticeLLegada);
             acumulado = auxiliar2.getPeso();
             fero2 = auxiliar2.getFeromonas();
@@ -443,16 +443,16 @@ public class Grafo {
     *@throws boolean.
     */
 
-    public boolean agregarArista(Arista a, Arista b) {
+    public boolean agregarArista(Arista a) {
     	int indice1, indice2;
     	for (Arista arist: listaArista){
-            if (arist.getId().equals(a.getId()) || arist.getId().equals(b.getId())) {
+            if (arist.getId().equals(a.getId()) ) {
     		return false;
             }
         }
     		
         listaArista.add(a);
-        listaArista.add(b);
+        //listaArista.add(b);
                     
         indice1 = listaVertices.indexOf(a.getExtremo1());
         indice2 = listaVertices.indexOf(a.getExtremo2());
@@ -485,8 +485,8 @@ public class Grafo {
             Vertice u1 = obtenerVertice(u);
             Vertice v1 = obtenerVertice(v); 
             Arista arista1 = new Arista(id,peso,u1,v1); 
-            Arista arista2 = new Arista(id,peso,v1,u1);
-            return agregarArista(arista1,arista2);
+            //Arista arista2 = new Arista(id,peso,v1,u1);
+            return agregarArista(arista1);
            
             }
         return false;

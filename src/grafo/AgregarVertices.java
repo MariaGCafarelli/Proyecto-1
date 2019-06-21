@@ -130,10 +130,13 @@ public class AgregarVertices extends javax.swing.JFrame {
         if (this.contador == this.numeroCiudades){
             int numeroCaminos = (((this.numeroCiudades - 1)* this.numeroCiudades)/2);
             System.out.println("aqui" + numeroCaminos);
-            new AgregarAristas(g,numeroCaminos, 0).setVisible(true);
-            this.dispose();
+            
+                new AgregarAristas(g,numeroCaminos, 0).setVisible(true);
+                this.dispose();
+        
+            
         }
-
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

@@ -6,6 +6,8 @@
 package grafo;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,20 +15,24 @@ import java.io.IOException;
  */
 public class Solucion {
     public static void main(String[] args) throws IOException {
-        /*// TODO code application logic here
+        // TODO code application logic here
         Grafo grafo = new Grafo();
+        /*Grafo grafo = new Grafo();
         grafo.cargarGrafo("segundo.txt");
         //grafo.feromonasIniciales();
         System.out.println(grafo.toString());
         Vertice v1 = grafo.obtenerVertice("caracas");
         Vertice v2 = grafo.obtenerVertice("colombia");
-        grafo.recorridoGrafo(v1);
-        //grafo.recorridoGrafo(v1);
+        ArrayList<Arista> a = new ArrayList<Arista>();
+        //a = grafo.recorridoGrafo(v1);
+        //System.out.println(a);
         //grafo.recorridoGrafo(v2);
+        //System.out.println(grafo.toString());
+        grafo.recorridoGrafo(v2);
         
-        //grafo.retornarGrafo("segundo");*/
-        
-        Hormiguero window = new Hormiguero();        
+        grafo.retornarGrafo("segundo2");*/
+        //JOptionPane.showMessageDialog(null,"En este recorrido la hormiga partió de: " + v1.getId() + "\nholaaaa" );   
+        Hormiguero window = new Hormiguero(grafo);        
         window.setVisible(true);
     }
     

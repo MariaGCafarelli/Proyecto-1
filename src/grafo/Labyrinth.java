@@ -19,7 +19,7 @@ public class Labyrinth extends JFrame{
     public Labyrinth(Vertice[][] maze) {
         this.maze = maze;
         setTitle("Recorrido de una hormiga");
-        setSize(500, 500);
+        setSize(500, 280);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*p = new PlayerMove();
@@ -195,10 +195,11 @@ public class Labyrinth extends JFrame{
                                 color = Color.WHITE;
 
                         }
+                        
                         g.setColor(color);
-                        g.fillRect(30 * col, 30 * row, 30, 30);
-                        g.setColor(Color.BLACK);
-                        g.drawRect(30 * col, 30 * row, 30, 30);
+                        g.fillRect(39 * col, 15 * row, 50, 50);
+                        //g.setColor(Color.BLACK);
+                        //g.drawRect(30 * col, 30 * row, 30, 30);
                     }
 
                 }

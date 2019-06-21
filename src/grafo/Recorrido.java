@@ -9,6 +9,8 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Set;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,11 +29,11 @@ public class Recorrido extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Comienza el recorrido");       
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
+        /*Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
         Dimension tamano=mipantalla.getScreenSize();
         int alturaP = tamano.height;
         int anchoP = tamano.width;
-        setLocation(anchoP/3,alturaP/4);
+        setLocation(anchoP/3,alturaP/4);*/
         this.hormiguero = g;
         this.hormigas = hormigas;
         this.contador = contador;
@@ -92,7 +94,7 @@ public class Recorrido extends javax.swing.JFrame {
         //MOSTRAR EL FRAME CON EL RECORRIDO
         ArrayList<Vertice> noVisitados = new ArrayList<Vertice>();
         ArrayList<Arista> visitada = new ArrayList<Arista>();
-        Vertice[][] maze = new Vertice[hormiguero.getNumeroVertices()][hormiguero.getNumeroVertices()*2];
+        Vertice[][] maze = new Vertice[21][20];
         
         for(int row = 0; row < maze.length; row++) {
             for(int col = 0; col < maze[0].length; col++) {
@@ -102,12 +104,14 @@ public class Recorrido extends javax.swing.JFrame {
             System.out.println();
         }
         
-        int pos = hormiguero.getNumeroVertices()/2;
-        
+        int pos = 9;
+        int contador = 0;
         for(int i = 0; i<hormiguero.getNumeroVertices();i++){
-            maze[pos][i].setColor(1);
+            maze[pos][contador+1].setColor(1);
+            maze[pos][contador+2].setColor(3);
+            contador = contador + 2;
         }
-        
+        maze[pos][contador].setColor(0);
         for(Vertice v: hormiguero.getVertices()){
             Vertice aux = v;
             noVisitados.add(aux);
@@ -115,20 +119,35 @@ public class Recorrido extends javax.swing.JFrame {
         
         //System.out.println(this.contador);
         
-        if(this.contador<hormiguero.getNumeroVertices()){
+        if(this.contador<this.hormigas){
             Random ram = new Random();
             int random = ram.nextInt((hormiguero.getNumeroVertices()-1)+1);
             Vertice temp = noVisitados.get(random);
+            Vertice inicial = temp;
             hormiguero.feromonasIniciales();
             visitada = hormiguero.recorridoGrafo(temp);
-            hormiguero.feromonasRecorrido(visitada);
+            //hormiguero.feromonasRecorrido(visitada);
             //System.out.println(visitada);
             this.contador++;
             //FRAMEEEEEEEE
-            Labyrinth recorriendo = new Labyrinth(maze);
-            recorriendo.setVisible(true);
+            //noVisitados.add(temp);
+            String recor = " ";
+            Double distancia = 0.0;
+            for(Arista a: visitada){
+                recor = recor + a.getExtremo1().getId() + " - " + a.getExtremo2() + "\n" + " ";
+                distancia = distancia + a.getPeso();
+            }
+            String total = String.valueOf(distancia);
+            //System.out.println(visitada);
+            //caja de informacion del recorrdio
+            JOptionPane.showMessageDialog(null,"Este es el recorrido numero: " + this.contador + "\n"+ "En este recorrido una de las " + this.hormigas + " hormigas partió de: " + inicial.getId() + "\n" + "Su recorrido fue por los caminos: "+ "\n" + recor + "\n" + " Su distancia recorrida fue de: " + total );
+            //Labyrinth recorriendo = new Labyrinth(maze);
+            //recorriendo.setVisible(true);
             //this.dispose();
-        }if(this.contador == hormiguero.getNumeroVertices()){
+        }if(this.contador == this.hormigas){
+            hormiguero.feromonasEvaporadas();
+            //INFORMACION DEL MEJOR CAMINO FINAL
+            new Opciones(this.hormiguero).setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed

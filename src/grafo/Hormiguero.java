@@ -7,17 +7,21 @@ package grafo;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Mari
  */
 public class Hormiguero extends javax.swing.JFrame {
-
+    Grafo g;
     /**
      * Creates new form Hormiguero
      */
-    public Hormiguero() {
+    public Hormiguero(Grafo g) {
         initComponents(); 
         this.setTitle("Sistema Hormiga");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -27,6 +31,7 @@ public class Hormiguero extends javax.swing.JFrame {
         int anchoP = tamano.width;
         setLocation(anchoP/3,alturaP/4);
         this.setResizable(false);
+        this.g=g;
     }
 
     /**
@@ -55,6 +60,11 @@ public class Hormiguero extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cargar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("   BIENVENIDO AL SIMULADOR DEL SISTEMA HORMIGA");
 
@@ -134,6 +144,19 @@ public class Hormiguero extends javax.swing.JFrame {
         System.exit(0);
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String nombre = JOptionPane.showInputDialog("Introduzca el nombre del archivo: ");
+        try {
+            g.cargarGrafo(nombre);
+            new OpcionesCargar(g).setVisible(true);
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(Hormiguero.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
