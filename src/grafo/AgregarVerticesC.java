@@ -132,6 +132,7 @@ public class AgregarVerticesC extends javax.swing.JFrame {
             System.out.println("aqui" + numeroCaminos);
                 
                 new AgregarAristas(g,numeroCaminos, 0).setVisible(true);
+                this.setVisible(false);
                 this.dispose();
         
             
