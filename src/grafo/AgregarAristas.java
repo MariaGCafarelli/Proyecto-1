@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package grafo;
 
 import java.awt.Dimension;
@@ -11,7 +7,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Mari
+ * @author Maria Gabriela Cafarelli
  */
 public class AgregarAristas extends javax.swing.JFrame {
 

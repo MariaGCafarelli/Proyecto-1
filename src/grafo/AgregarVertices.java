@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package grafo;
 
 import java.awt.Dimension;
@@ -10,14 +6,13 @@ import java.awt.Toolkit;
 
 /**
  *
- * @author Mari
+ * @author Maria Gabriela Cafarelli
  */
 public class AgregarVertices extends javax.swing.JFrame {
     private Grafo g;
     private int numeroCiudades;
     private int contador;
     
-
     public AgregarVertices(Grafo g, int numeroCiudades, int contador) {
         initComponents();
         this.setTitle("Agregar Ciudades");

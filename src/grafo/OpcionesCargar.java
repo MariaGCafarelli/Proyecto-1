@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package grafo;
 
 import java.awt.Dimension;
@@ -11,13 +7,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Mari
+ * @author Maria Gabriela Cafarelli
  */
 public class OpcionesCargar extends javax.swing.JFrame {
     Grafo hormiguero;
-    /**
-     * Creates new form OpcionesCargar
-     */
+
     public OpcionesCargar(Grafo g) {
         initComponents();
         this.setTitle("Opciones para cargar el hormiguero");       

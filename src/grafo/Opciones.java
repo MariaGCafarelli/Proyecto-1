@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package grafo;
 
 import java.awt.Dimension;
@@ -14,13 +10,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Mari
+ * @author Maria Gabriela Cafarelli
  */
 public class Opciones extends javax.swing.JFrame {
     Grafo g;
-    /**
-     * Creates new form Opciones
-     */
+
     public Opciones(Grafo g) {
         initComponents();
         this.setTitle("Opciones");       
@@ -118,7 +112,7 @@ public class Opciones extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        String nombre = JOptionPane.showInputDialog("Introduzca el nombre que desea ponerle al archivo: ");
+        String nombre = JOptionPane.showInputDialog("Introduzca el nombre que desea ponerle al archivo con el hormiguero: ");
         //nombre = nombre +".txt";
         try {
             g.retornarGrafo(nombre);
