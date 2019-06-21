@@ -121,7 +121,7 @@ public class Recorrido extends javax.swing.JFrame {
             String total = String.valueOf(distancia);
             //System.out.println(visitada);
             //caja de informacion del recorrdio
-            JOptionPane.showMessageDialog(null,"Este es el recorrido numero: " + this.contador + "\n"+ "En este recorrido una de las " + this.hormigas + " hormigas partió de: " + inicial.getId() + "\n" + "Su recorrido fue por los caminos: "+ "\n" + recor + "\n" + " Su distancia recorrida fue de: " + total );
+            JOptionPane.showMessageDialog(null,"Este es el recorrido numero: " + this.contador + "\n"+ "\n"+ "En este recorrido una de las " + this.hormigas + " hormigas partió de: " + inicial.getId() + "\n" + "Su recorrido fue por los caminos: "+ "\n" + recor + "\n" + " Su distancia recorrida fue de: " + total );
 
             //this.dispose();
         }if(this.contador == this.hormigas){
@@ -130,7 +130,7 @@ public class Recorrido extends javax.swing.JFrame {
             Double mejorRecorrido = 20000.0;
             for(Double p: recorridos){
                 
-                System.out.println(recorridos.get(i));
+                //System.out.println(recorridos.get(i));
                 Double aux = recorridos.get(i);
                 int equals = Double.compare(aux,mejorRecorrido);
                 if (equals<0){
@@ -147,7 +147,7 @@ public class Recorrido extends javax.swing.JFrame {
             for(Arista a: mejor){
                 recorr = recorr + a.getExtremo1().getId() + " - " + a.getExtremo2() + "\n" + " ";  
             }
-            JOptionPane.showMessageDialog(null, "El recorrido mas corto de esta iteración es cuando la hormiga pasa por estos caminos: " + "\n" + recorr + "\n" + "La distancia recorrida sería de: " + mejorRecorrido );
+            JOptionPane.showMessageDialog(null, "El recorrido mas corto de esta iteración es cuando la hormiga pasa por estos caminos: " + "\n" + recorr + "La distancia recorrida sería de: " + mejorRecorrido );
             hormiguero.feromonasEvaporadas();
             JOptionPane.showMessageDialog(null, "Se actualizaron las feromonas por evaporación.");
             //INFORMACION DEL MEJOR CAMINO FINAL
