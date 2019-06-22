@@ -107,11 +107,18 @@ public class Recorrido extends javax.swing.JFrame {
             listaDeRecorridos.add(visitada);
             String recor = " ";
             Double distancia = 0.0;
+            Vertice auxiliar = temp;
             for(Arista a: visitada){
-                recor = recor + a.getExtremo1().getId() + " - " + a.getExtremo2() + "\n" + " ";
                 distancia = distancia + a.getPeso();
+                if (auxiliar.getId().equals(a.getExtremo1().getId())){
+                    recor = recor + a.getExtremo2().getId() + "\n" + " ";
+                    auxiliar = a.getExtremo2();
+                }else{
+                    recor = recor + a.getExtremo1().getId() + "\n" + " ";
+                    auxiliar = a.getExtremo1();
+                }    
             }
-            System.out.println(distancia + " " + contador);
+            //System.out.println(distancia + " " + contador);
             //this.recorridos[this.contador] = distancia;
             recorridos.add(distancia);
             this.contador++;
@@ -121,7 +128,7 @@ public class Recorrido extends javax.swing.JFrame {
             String total = String.valueOf(distancia);
             //System.out.println(visitada);
             //caja de informacion del recorrdio
-            JOptionPane.showMessageDialog(null,"Este es el recorrido numero: " + this.contador + "\n"+ "\n"+ "En este recorrido una de las " + this.hormigas + " hormigas partió de: " + inicial.getId() + "\n" + "Su recorrido fue por los caminos: "+ "\n" + recor + "\n" + " Su distancia recorrida fue de: " + total );
+            JOptionPane.showMessageDialog(null,"Este es el recorrido numero: " + this.contador + "\n"+ "\n"+ "En este recorrido una de las " + this.hormigas + " hormigas partió de: " + inicial.getId() + "\n" +"\n" + "Luego siguió este orden en el recorrido de las ciudades: "+ "\n" + recor + "\n" + " Su distancia recorrida fue de: " + total );
 
             //this.dispose();
         }if(this.contador == this.hormigas){
@@ -147,7 +154,7 @@ public class Recorrido extends javax.swing.JFrame {
             for(Arista a: mejor){
                 recorr = recorr + a.getExtremo1().getId() + " - " + a.getExtremo2() + "\n" + " ";  
             }
-            JOptionPane.showMessageDialog(null, "El recorrido mas corto de esta iteración es cuando la hormiga pasa por estos caminos: " + "\n" + recorr + "La distancia recorrida sería de: " + mejorRecorrido );
+            JOptionPane.showMessageDialog(null, "El recorrido mas corto de esta iteración es cuando la hormiga sigue este orden de caminos: " + "\n" + recorr + "La distancia recorrida sería de: " + mejorRecorrido );
             hormiguero.feromonasEvaporadas();
             JOptionPane.showMessageDialog(null, "Se actualizaron las feromonas por evaporación.");
             //INFORMACION DEL MEJOR CAMINO FINAL

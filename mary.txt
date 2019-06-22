@@ -1,0 +1,12 @@
+4
+6
+colombia
+peru
+chile
+lima
+carretera5 colombia peru 30.0 0.12857142857142856
+carretera6 colombia lima 20.0 0.12857142857142856
+carretera7 colombia chile 50.0 0.125
+carretera8 peru lima 50.0 0.125
+carretera9 peru chile 50.0 0.12857142857142856
+carretera10 chile lima 40.0 0.12857142857142856
