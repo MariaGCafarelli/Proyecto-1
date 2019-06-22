@@ -3,7 +3,7 @@ package grafo;
 import java.text.DecimalFormat;
 
 /**
- * Clase Arista que hereda de la Clase LADO. Posee 6 metodos. Arista, getPeso, getId, getExtremo1, getExtremo2, toString, clone
+ * Clase Arista que hereda de la Clase LADO
  *@param String id: Id del Arista
  *@param Double p: peso del Arista
  *@param Vertice u: El vertice inicial del Arista
@@ -38,7 +38,7 @@ public class Arista extends Lado
     return stringRepresentacion;
   }
 
-  public void setProbabilidad(Double probabilidad){ //toma las feromonas que ya tiene la arista y calcula su probabilidad, crear una variable que acumule la distancia que ha recorrido
+  public void setProbabilidad(Double probabilidad){ //toma las feromonas que ya tiene la arista y calcula su probabilidad
       this.probabilidad = probabilidad;
   }
   
@@ -46,11 +46,11 @@ public class Arista extends Lado
       return this.probabilidad;
   }
   
-  public void setFeromonasIniciales(Double feromonas){
+  public void setFeromonasIniciales(Double feromonas){ //feromonas antes de comenzar el primer recorrido sobre un grafo
       this.feromonas = feromonas;
   }
   
-  public void setFeromonas1(Double feromonasAct){ //actualizacion por paso de hormiga
+  public void setFeromonas1(Double feromonasAct){ //actualizacion por paso de hormiga en su recorrido
       this.feromonas = this.feromonas + feromonasAct; 
   }
   

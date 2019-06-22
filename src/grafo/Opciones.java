@@ -19,7 +19,7 @@ public class Opciones extends javax.swing.JFrame {
         initComponents();
         this.setTitle("¿Cómo desea continuar?");       
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
+        Toolkit mipantalla = Toolkit.getDefaultToolkit();
         Dimension tamano=mipantalla.getScreenSize();
         int alturaP = tamano.height;
         int anchoP = tamano.width;
@@ -153,11 +153,12 @@ public class Opciones extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String nombre = JOptionPane.showInputDialog("Introduzca el nombre que desea ponerle al archivo con el hormiguero: ");
-        //nombre = nombre +".txt";
+
         try {
             g.retornarGrafo(nombre);
             new Hormiguero(this.g).setVisible(true);
             this.setVisible(false);
+            this.dispose();
         } catch (IOException ex) {
             Logger.getLogger(Opciones.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -173,12 +174,14 @@ public class Opciones extends javax.swing.JFrame {
         String hormigas = JOptionPane.showInputDialog("Introduzca el numero de hormigas que realizaran la iteración: ");
         int numeroHormigas = Integer.parseInt(hormigas);
         new Recorrido(this.g,numeroHormigas,0).setVisible(true);
+        this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         new Hormiguero(g).setVisible(true);
+        this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 

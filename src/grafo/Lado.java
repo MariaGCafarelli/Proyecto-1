@@ -5,7 +5,6 @@
  */
 package grafo;
 
-
 public abstract class Lado
 {
   public String id;

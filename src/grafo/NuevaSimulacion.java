@@ -85,10 +85,8 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         String stringCiudades = jTextField1.getText();
         int numeroCiudades = Integer.parseInt(stringCiudades);
-        //hormiguero.setNumeroVertices(numeroCiudades);
-        //int numeroCaminos = (((numeroCiudades-1)*numeroCiudades)/2);
-        //hormiguero.setNumeroLados(numeroCaminos);
         new AgregarVertices(hormiguero,numeroCiudades,0).setVisible(true);
+        this.setVisible(false);
         this.dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed

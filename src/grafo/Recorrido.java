@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Set;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,14 +15,13 @@ public class Recorrido extends javax.swing.JFrame {
     Grafo hormiguero;
     int hormigas;
     int contador;
-    //ArrayList <ArrayList<Arista>> aristasRecorridas = new ArrayList<ArrayList<Arista>>();
     ArrayList <Double> recorridos = new ArrayList<Double>();
     ArrayList <ArrayList<Arista>> listaDeRecorridos = new ArrayList<ArrayList<Arista>>();
             
 
     public Recorrido(Grafo g, int hormigas, int contador) {
         initComponents();
-        this.setTitle("Comienza el recorrido");       
+        this.setTitle("Comienza un recorrido");       
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
         Dimension tamano=mipantalla.getScreenSize();
@@ -134,7 +132,7 @@ public class Recorrido extends javax.swing.JFrame {
         }if(this.contador == this.hormigas){
             int posicion = 0;
             int i =0;
-            Double mejorRecorrido = 20000.0;
+            Double mejorRecorrido = 900000000.0;
             for(Double p: recorridos){
                 
                 //System.out.println(recorridos.get(i));
@@ -154,7 +152,7 @@ public class Recorrido extends javax.swing.JFrame {
             for(Arista a: mejor){
                 recorr = recorr + a.getExtremo1().getId() + " - " + a.getExtremo2() + "\n" + " ";  
             }
-            JOptionPane.showMessageDialog(null, "El recorrido mas corto de esta iteración es cuando la hormiga sigue este orden de caminos: " + "\n" + recorr + "La distancia recorrida sería de: " + mejorRecorrido );
+            JOptionPane.showMessageDialog(null, "El recorrido con mas feromonas de esta iteración es cuando la hormiga sigue este orden de caminos: " + "\n" + recorr + "La distancia recorrida sería de: " + mejorRecorrido );
             hormiguero.feromonasEvaporadas();
             JOptionPane.showMessageDialog(null, "Se actualizaron las feromonas por evaporación.");
             //INFORMACION DEL MEJOR CAMINO FINAL
@@ -163,9 +161,6 @@ public class Recorrido extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

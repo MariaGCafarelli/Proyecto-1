@@ -133,8 +133,7 @@ public class AgregarVerticesC extends javax.swing.JFrame {
                 new AgregarAristas(g,caminosNuevos, 0).setVisible(true);
                 this.setVisible(false);
                 this.dispose();
-        
-            
+                   
         }
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

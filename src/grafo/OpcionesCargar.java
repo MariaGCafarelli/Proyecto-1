@@ -121,6 +121,7 @@ public class OpcionesCargar extends javax.swing.JFrame {
         String numero = JOptionPane.showInputDialog("Introduzca el número de hormigas que tendrá la iteración: ");
         int hormigas = Integer.parseInt(numero);
         new Recorrido(this.hormiguero,hormigas,0).setVisible(true);
+        this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -128,7 +129,7 @@ public class OpcionesCargar extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nombre = JOptionPane.showInputDialog("Introduzca el número de ciudades que desea agregará al hormiguero: ");
         int ciudades = Integer.parseInt(nombre);
-        new AgregarVerticesC(this.hormiguero,ciudades,0).setVisible(true);//FALTA TERMINAR AGREGAR A UN GRAFO CARGADO
+        new AgregarVerticesC(this.hormiguero,ciudades,0).setVisible(true);
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

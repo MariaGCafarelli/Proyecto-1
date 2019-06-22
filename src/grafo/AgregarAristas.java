@@ -209,7 +209,6 @@ public class AgregarAristas extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

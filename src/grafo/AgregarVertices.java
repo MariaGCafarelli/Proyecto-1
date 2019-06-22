@@ -129,8 +129,7 @@ public class AgregarVertices extends javax.swing.JFrame {
                 new AgregarAristas(g,numeroCaminos, 0).setVisible(true);
                 this.setVisible(false);
                 this.dispose();
-        
-            
+                    
         }
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

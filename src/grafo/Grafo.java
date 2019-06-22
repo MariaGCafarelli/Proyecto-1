@@ -1,5 +1,6 @@
 
 package grafo;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -221,14 +222,9 @@ public class Grafo {
                 contador = i;
             }
         }
-        
-      
+              
         auxiliar = arregloAristas[contador];
         
-        /*for(int j=0;j<arregloProbabilidades.length; j++){
-            System.out.println(arregloProbabilidades[j]);
-        }
-        System.out.println(auxiliar.toString());*/
         return auxiliar;
         
     }
@@ -246,9 +242,9 @@ public class Grafo {
         Double resultado2 = 0.0, probabilidad = null, fero = null, acumulado1 = null;
         Double resultado1,  cuadrado, multi, acumulado, fero2;
         Arista auxiliar, auxiliar2;
-        //System.out.println("ESTA" + verticeSalida.getId() + verticeLLegada.getId());
+
         if (estaLado(verticeSalida.getId(),verticeLLegada.getId()) || estaLado(verticeLLegada.getId(),verticeSalida.getId())){
-            //System.out.println("ESTA");
+
             auxiliar2 = obtenerArista(verticeSalida,verticeLLegada);
             acumulado = auxiliar2.getPeso();
             fero2 = auxiliar2.getFeromonas();
@@ -488,7 +484,6 @@ public class Grafo {
             Vertice u1 = obtenerVertice(u);
             Vertice v1 = obtenerVertice(v); 
             Arista arista1 = new Arista(id,peso,u1,v1); 
-            //Arista arista2 = new Arista(id,peso,v1,u1);
             return agregarArista(arista1);
            
             }
@@ -530,9 +525,6 @@ public class Grafo {
                 indice2 = listaVertices.indexOf(arist2.getExtremo2());
 
                 listaArista.remove(arist2);
-                
-                //listaVerticesAdyacentes.get(indice1).remove(arist2.getExtremo1());
-                //listaVerticesAdyacentes.get(indice2).remove(arist2.getExtremo2());
 
             }
             return true;
@@ -631,8 +623,7 @@ public class Grafo {
                             }
                         }
                         if (estaVerticee == 2){
-                            Arista arista = new Arista(separar[0].toLowerCase(),Double.parseDouble(separar[3]),vI,vF); //ARISTAS CON UNA SOLA PALABRA DE NOMBRE
-                            //System.out.println(separar[4]);
+                            Arista arista = new Arista(separar[0].toLowerCase(),Double.parseDouble(separar[3]),vI,vF); 
                             arista.setFeromonasIniciales(Double.parseDouble(separar[4]));
                             listaArista.add(arista);
                             if (!(listaVerticesAdyacentes.get(posicion1).contains(vF)))
@@ -655,7 +646,7 @@ public class Grafo {
             System.out.println("No se pudo cargar el grafo con exito.");
             e.printStackTrace();
             return false;
-        } //TERMINADO
+        } 
     }
 
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
@@ -690,7 +681,7 @@ public class Grafo {
             System.out.println("No se pudo cargar el grafo en un .txt con exito.");
             e.printStackTrace();
             return false;
-        } //TERMINADO
+        } 
     }
         
 }
