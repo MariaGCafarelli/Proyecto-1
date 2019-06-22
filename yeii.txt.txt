@@ -1,6 +1,0 @@
-2
-1
-ccs
-colom
-jtextfield1 ccs colom 55.0 0.25909090909090904
-jtextfield1 colom ccs 55.0 0.25
