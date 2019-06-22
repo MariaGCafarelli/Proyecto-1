@@ -25,11 +25,11 @@ public class Recorrido extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Comienza el recorrido");       
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        /*Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
+        Toolkit mipantalla = Toolkit.getDefaultToolkit(); //UBICACION DE LA VENTANA
         Dimension tamano=mipantalla.getScreenSize();
         int alturaP = tamano.height;
         int anchoP = tamano.width;
-        setLocation(anchoP/3,alturaP/4);*/
+        setLocation(anchoP/2,alturaP/2);
         this.hormiguero = g;
         this.hormigas = hormigas;
         this.contador = contador;

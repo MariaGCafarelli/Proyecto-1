@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Grafo">
+  <ClassDiagramComponents>
+    <Class name="AgregarAristas" package="grafo" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="g" type="Grafo" visibility="private"/>
+        <Field name="numeroCaminos" type="int" visibility="private"/>
+        <Field name="contador" type="int" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField3" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField4" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Grafo" name="g"/>
+          <Argument type="int" name="numeroCaminos"/>
+          <Argument type="int" name="contador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jTextField2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AgregarVertices" package="grafo" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="g" type="Grafo" visibility="private"/>
+        <Field name="numeroCiudades" type="int" visibility="private"/>
+        <Field name="contador" type="int" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Grafo" name="g"/>
+          <Argument type="int" name="numeroCiudades"/>
+          <Argument type="int" name="contador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AgregarVerticesC" package="grafo" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="g" type="Grafo" visibility="private"/>
+        <Field name="numeroCiudades" type="int" visibility="private"/>
+        <Field name="contador" type="int" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Grafo" name="g"/>
+          <Argument type="int" name="numeroCiudades"/>
+          <Argument type="int" name="contador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Arista" package="grafo" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="u" type="Vertice" visibility="private"/>
+        <Field name="v" type="Vertice" visibility="private"/>
+        <Field name="feromonas" type="Double" visibility="package"/>
+        <Field name="probabilidad" type="Double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="double" name="peso"/>
+          <Argument type="Vertice" name="u"/>
+          <Argument type="Vertice" name="v"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getExtremo1" returnType="Vertice" visibility="public"/>
+        <Method name="getExtremo2" returnType="Vertice" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="setProbabilidad" returnType="void" visibility="public">
+          <Argument type="Double" name="probabilidad"/>
+        </Method>
+        <Method name="getProbabilidad" returnType="Double" visibility="public"/>
+        <Method name="setFeromonasIniciales" returnType="void" visibility="public">
+          <Argument type="Double" name="feromonas"/>
+        </Method>
+        <Method name="setFeromonas1" returnType="void" visibility="public">
+          <Argument type="Double" name="feromonasAct"/>
+        </Method>
+        <Method name="setFeromonas2" returnType="void" visibility="public"/>
+        <Method name="getFeromonas" returnType="Double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Grafo" package="grafo" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="listaVertices" type="ArrayList&lt;Vertice&gt;" visibility="private"/>
+        <Field name="listaArista" type="ArrayList&lt;Arista&gt;" visibility="private"/>
+        <Field name="listaVerticesAdyacentes" type="ArrayList&lt;ArrayList&lt;Vertice&gt;&gt;" visibility="private"/>
+        <Field name="numeroVertice" type="int" visibility="private"/>
+        <Field name="v" type="Vertice" visibility="private"/>
+        <Field name="a" type="Arista" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getVertices" returnType="ArrayList&lt;Vertice&gt;" visibility="public"/>
+        <Method name="getNumeroVertices" returnType="int" visibility="public"/>
+        <Method name="getNumeroLados" returnType="int" visibility="public"/>
+        <Method name="setNumeroVertices" returnType="void" visibility="public">
+          <Argument type="int" name="vertices"/>
+        </Method>
+        <Method name="setNumeroLados" returnType="void" visibility="public">
+          <Argument type="int" name="lados"/>
+        </Method>
+        <Method name="recorridoGrafo" returnType="ArrayList&lt;Arista&gt;" visibility="public">
+          <Argument type="Vertice" name="verticeInicial"/>
+        </Method>
+        <Method name="feromonasIniciales" returnType="void" visibility="public"/>
+        <Method name="feromonasEvaporadas" returnType="void" visibility="public"/>
+        <Method name="feromonasRecorrido" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Arista&gt;" name="a"/>
+        </Method>
+        <Method name="mejorCamino" returnType="Arista" visibility="public">
+          <Argument type="Vertice" name="inicial"/>
+          <Argument type="ArrayList&lt;Vertice&gt;" name="noVisitados"/>
+        </Method>
+        <Method name="probabilidad" returnType="Double" visibility="public">
+          <Argument type="Vertice" name="verticeSalida"/>
+          <Argument type="Vertice" name="verticeLLegada"/>
+        </Method>
+        <Method name="agregarVertice" returnType="boolean" visibility="public">
+          <Argument type="Vertice" name="v"/>
+        </Method>
+        <Method name="agregarVertice" returnType="boolean" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="obtenerVertice" returnType="Vertice" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="estaVertice" returnType="boolean" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="estaLado" returnType="boolean" visibility="public">
+          <Argument type="String" name="u"/>
+          <Argument type="String" name="v"/>
+        </Method>
+        <Method name="eliminarVertice" returnType="boolean" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="vertices" returnType="List&lt;Vertice&gt;" visibility="public"/>
+        <Method name="lados" returnType="List&lt;Lado&gt;" visibility="public"/>
+        <Method name="agregarArista" returnType="boolean" visibility="public">
+          <Argument type="Arista" name="a"/>
+        </Method>
+        <Method name="agregarArista" returnType="boolean" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="double" name="peso"/>
+          <Argument type="String" name="u"/>
+          <Argument type="String" name="v"/>
+        </Method>
+        <Method name="eliminarArista" returnType="boolean" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="obtenerArista" returnType="Arista" visibility="public">
+          <Argument type="Vertice" name="u"/>
+          <Argument type="Vertice" name="v"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="cargarGrafo" returnType="boolean" visibility="public">
+          <Argument type="String" name="Archivo"/>
+        </Method>
+        <Method name="retornarGrafo" returnType="boolean" visibility="public">
+          <Argument type="String" name="Archivo"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hormiguero" package="grafo" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="g" type="Grafo" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Grafo" name="g"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lado" package="grafo" visibility="public" isAbstract="true" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="id" type="String" visibility="public"/>
+        <Field name="peso" type="double" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="double" name="p"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="getPeso" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="NuevaSimulacion" package="grafo" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="hormiguero" type="Grafo" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jTextField1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jTextField2" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Opciones" package="grafo" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="g" type="Grafo" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton4" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Grafo" name="g"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton4ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OpcionesCargar" package="grafo" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="hormiguero" type="Grafo" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton3" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Grafo" name="g"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Recorrido" package="grafo" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="hormiguero" type="Grafo" visibility="package"/>
+        <Field name="hormigas" type="int" visibility="package"/>
+        <Field name="contador" type="int" visibility="package"/>
+        <Field name="recorridos" type="ArrayList&lt;Double&gt;" visibility="package"/>
+        <Field name="listaDeRecorridos" type="ArrayList&lt;ArrayList&lt;Arista&gt;&gt;" visibility="package"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Grafo" name="g"/>
+          <Argument type="int" name="hormigas"/>
+          <Argument type="int" name="contador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Solucion" package="grafo" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vertice" package="grafo" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="v" source="grafo.Arista" target="grafo.Vertice" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaDeRecorridos" source="grafo.Recorrido" target="grafo.Arista" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;ArrayList&lt;Arista&gt;&gt;"/>
+    <HasRelation name="g" source="grafo.AgregarVertices" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="grafo.Grafo" target="grafo.Vertice" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="u" source="grafo.Arista" target="grafo.Vertice" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="a" source="grafo.Grafo" target="grafo.Arista" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaVerticesAdyacentes" source="grafo.Grafo" target="grafo.Vertice" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;ArrayList&lt;Vertice&gt;&gt;"/>
+    <HasRelation name="v" source="grafo.Grafo" target="grafo.Vertice" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="g" source="grafo.AgregarAristas" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="grafo.Grafo" target="grafo.Lado" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaArista" source="grafo.Grafo" target="grafo.Arista" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Arista&gt;"/>
+    <HasRelation name="g" source="grafo.Opciones" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="hormiguero" source="grafo.Recorrido" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="hormiguero" source="grafo.NuevaSimulacion" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="hormiguero" source="grafo.OpcionesCargar" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="grafo.Arista" target="grafo.Vertice" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="grafo.Grafo" target="grafo.Arista" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="g" source="grafo.AgregarVerticesC" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="grafo.Arista" target="grafo.Lado"/>
+    <HasRelation name="listaVertices" source="grafo.Grafo" target="grafo.Vertice" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Vertice&gt;"/>
+    <HasRelation name="g" source="grafo.Hormiguero" target="grafo.Grafo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

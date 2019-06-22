@@ -21,6 +21,7 @@ public class NuevaSimulacion extends javax.swing.JFrame {
         int anchoP = tamano.width;
         setLocation(anchoP/3,alturaP/4);
         this.setResizable(false);
+        this.jTextField1.setText(null);
         
     }
 

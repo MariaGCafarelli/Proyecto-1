@@ -1,0 +1,11 @@
+//Ejemplo del tipo de archivo que se genera cuando se guarda un grafo:
+//Numero de vertices n
+//Numero de lados m
+//vertice1
+//vertice2
+//...
+//vertice n
+//arista1 extremo1 extremo2 peso feromonas
+//arista2 extremo1 extremo2 peso feromonas
+//...
+//aristam extremo1 extremo2 peso feromonas

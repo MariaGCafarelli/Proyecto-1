@@ -27,6 +27,10 @@ public class AgregarAristas extends javax.swing.JFrame {
         this.g=g;
         this.contador = contador;
         this.numeroCaminos = numeroCaminos;
+        this.jTextField1.setText(null);
+        this.jTextField2.setText(null);
+        this.jTextField3.setText(null);
+        this.jTextField4.setText(null);
     }
 
     /**

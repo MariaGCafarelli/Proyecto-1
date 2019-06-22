@@ -26,7 +26,7 @@ public class AgregarVertices extends javax.swing.JFrame {
         this.g=g;
         this.numeroCiudades = numeroCiudades;
         this.contador=contador;
-        
+        this.jTextField1.setText(null);
     }
 
     /**
