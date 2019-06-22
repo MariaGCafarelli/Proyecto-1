@@ -386,22 +386,26 @@ public class Grafo {
     */
 
     public boolean eliminarVertice(String id) { 
-        int indice;
+        int indice, contador=0;
+        String[] posiciones = new String[this.numeroVertice-1];
         if (estaVertice(id)){
             v = obtenerVertice(id);
+            System.out.println(v.getId());
             indice = listaVertices.indexOf(v);
             listaVertices.remove(v);
             listaVerticesAdyacentes.remove(indice);
-            for (ArrayList<Vertice> a: listaVerticesAdyacentes){
-            	if (a.contains(v)){
-            		a.remove(v);
-            	}
-            }
-            for(int j = 0; j<= numeroLado; j++){
-                if (listaArista.get(j).getExtremo1() == v || listaArista.get(j).getExtremo2() == v){
-                	listaArista.remove(j);
+
+            for(Arista a: listaArista){
+                if(a.getExtremo1() == v || a.getExtremo2() == v){
+                    String in = a.getId();
+                    posiciones[contador] = in;
+                    contador++;
                 }
             }
+            for(int i=0;i<posiciones.length; i++){
+                eliminarArista(posiciones[i]);
+            }
+            this.numeroVertice--;
             return true;
         }
         return false;   
@@ -527,8 +531,8 @@ public class Grafo {
 
                 listaArista.remove(arist2);
                 
-                listaVerticesAdyacentes.get(indice1).remove(arist2.getExtremo1());
-                listaVerticesAdyacentes.get(indice2).remove(arist2.getExtremo2());
+                //listaVerticesAdyacentes.get(indice1).remove(arist2.getExtremo1());
+                //listaVerticesAdyacentes.get(indice2).remove(arist2.getExtremo2());
 
             }
             return true;
