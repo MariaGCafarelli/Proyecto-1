@@ -6,7 +6,7 @@ peru
 chile
 lima
 carretera1 caracas colombia 300.0 5
-carretera2 caracas peru 100.0 6
+carretera2 caracas peru 100.0 5
 carretera3 caracas lima 500.0 5
 carretera4 caracas chile 30.0 5
 carretera5 colombia peru 700.0 5

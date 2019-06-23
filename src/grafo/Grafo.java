@@ -10,6 +10,7 @@ import java.util.*;
 /**
  *
  * @author Maria Gabriela Cafarelli
+ * @author John Erice
  */
 
 public class Grafo {
@@ -556,11 +557,13 @@ public class Grafo {
 
     public String toString() {
         String cadenaGrafo;
-        cadenaGrafo = ("" + String.valueOf(numeroVertice) + "\n");
-        cadenaGrafo = (cadenaGrafo + String.valueOf(numeroLado) + "\n");
+        cadenaGrafo = ("Número de ciudades en el grafo: " + String.valueOf(numeroVertice) + "\n"+"\n");
+        cadenaGrafo = (cadenaGrafo + "El numero de lados en el grafo es: " + String.valueOf(numeroLado) + "\n" +"\n");
+        cadenaGrafo = cadenaGrafo + "Lista de ciudades: " + "\n";
         for (Vertice vr: listaVertices){
-            cadenaGrafo = (cadenaGrafo + vr.toString() + "\n");
+            cadenaGrafo = (cadenaGrafo + vr.toString() +"\n");
         }
+        cadenaGrafo = cadenaGrafo +"\n"+ "Lista de caminos: " + "\n";
         for (Arista ar: listaArista){
             cadenaGrafo = (cadenaGrafo + ar.toString() + "\n");
         }
@@ -639,6 +642,7 @@ public class Grafo {
                 }
             contador = contador + 1;
             }
+            System.out.println("Se cargó el grafo con éxito.");
             in.close(); 
             return true;       
         }

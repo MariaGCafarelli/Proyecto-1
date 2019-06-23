@@ -1,15 +1,5 @@
 
 package grafo;
-import java.text.DecimalFormat;
-
-/**
- * Clase Arista que hereda de la Clase LADO
- *@param String id: Id del Arista
- *@param Double p: peso del Arista
- *@param Vertice u: El vertice inicial del Arista
- *@param Vertice v: El vertice final del Arista
- *@throw String stringRepresentacio: String que es de la forma "id + peso"
- */
 
 public class Arista extends Lado
 {
@@ -34,7 +24,7 @@ public class Arista extends Lado
   }
 
   public String toString() {
-    String stringRepresentacion = (id + " " + u.getId() + " " + v.getId() + " " + String.valueOf(this.peso) + " " + String.valueOf(this.feromonas));
+    String stringRepresentacion = (id + " une la ciudad '"+  u.getId() + "' con '" + v.getId() + "'.  La distancia entre ellas es: " + String.valueOf(this.peso) + " y contine un rastro de feromonas de: " + String.valueOf(this.feromonas)+".");
     return stringRepresentacion;
   }
 
